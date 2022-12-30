@@ -18,8 +18,20 @@ class HexToBase64Tests: XCTestCase {
 
     func testHexToBinary() {
         //Given
-        let hexString = "ff098ac"
-        let expectation = "1111111100001001100010101100"
+        let hexString = "1c0111001f010100061a024b53535009181c"
+        let expectation = "000111000000000100010001000000000001111100000001000000010000000000000110000110100000001001001011010100110101001101010000000010010001100000011100"
+
+        //When
+        let result = hexToBinary(hexString: hexString)
+
+        //Then
+        XCTAssertEqual(expectation, result)
+    }
+
+     func testHexToBinary2() {
+        //Given
+        let hexString = "686974207468652062756c6c277320657965"
+        let expectation = "011010000110100101110100001000000111010001101000011001010010000001100010011101010110110001101100001001110111001100100000011001010111100101100101"
 
         //When
         let result = hexToBinary(hexString: hexString)
